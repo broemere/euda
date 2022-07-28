@@ -1,0 +1,12 @@
+dateparser==1.1.1
+humanize==4.2.3
+matplotlib==3.5.2
+mayavi==4.8.0
+numpy==1.23.1
+opencv-python==4.6.0.66
+openpyxl==3.0.10
+pandas==1.4.3
+python-dateutil==2.8.2
+scipy==1.8.1
+statsmodels==0.13.2
+xmltodict==0.13.0

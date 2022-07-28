@@ -1,0 +1,6 @@
+_snapshot/
+.idea/
+__pycache__/
+venv/
+viz/
+_data/

@@ -385,3 +385,43 @@ def img_cleanup(img):
     opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
     canv = get_largest_object(opening)
     return canv.astype(np.uint8)
+
+
+def img_rotate(img, angle):
+    img_center = (np.array(img.shape[1::-1]) / 2)
+    rot_mat = cv2.getRotationMatrix2D(img_center, angle, 1.0)
+    img_rot = cv2.warpAffine(img, rot_mat, img.shape[1::-1], cv2.INTER_LINEAR)
+    return img_rot
+
+
+def img_align(img):
+    approx_meth = cv2.CHAIN_APPROX_NONE
+    cnts, hiers = cv2.findContours(img, cv2.RETR_TREE, approx_meth)
+    (x, y), (MA, ma), angle = cv2.fitEllipse(cnts[0])
+    if angle > 90:
+        angle = angle - 180
+    img_rot = img_rotate(img, angle)
+    return img_rot
+
+
+def img_hardcrop(img):
+    y_nonzero, x_nonzero = np.nonzero(img)
+    img_crop = img[np.min(y_nonzero):np.max(y_nonzero) + 1, np.min(x_nonzero):np.max(x_nonzero) + 1]
+    return img_crop
+
+
+def img_thresh(img, th):
+    ret, thresh1 = cv2.threshold(deepcopy(img), th, 255, cv2.THRESH_BINARY)
+    return thresh1
+
+
+def get_lowess(data, f=0.4):
+    lowess = sm.nonparametric.lowess
+    low = lowess(data, np.arange(0, len(data)), frac=f)[:, 1]
+    return low
+
+
+def get_letter(number):
+    letters = "abcdefghijklmnopqrstuvwxyz"
+    return letters[int(number)]
+

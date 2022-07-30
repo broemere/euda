@@ -1,7 +1,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="http://github.com/broemere/euda/raw/master/euda-header.png"></img>
+	<a target="_blank" rel="noopener noreferrer" href="https://github.com/broemere/euda">
+		<img src="https://raw.githubusercontent.com/broemere/euda/master/euda-header.png">
+	</a>
     <p>
         <a href="#installation">Installation</a> •
         <a href="#usage">Usage</a> •
@@ -26,9 +28,11 @@ materials.
 
 # Installation
 
-```python3 64-bit```
+Requires ```python3 64-bit```
 
-### Requirements
+Developed on <a href="https://www.python.org/downloads/release/python-3913/">python v3.9.13</a>
+
+### Package Requirements
 
 * matplotlib
 * numpy
@@ -54,18 +58,21 @@ pip install -r requirements.txt
         * `interm` - intermediate data storage for machine use
         * `output` - for human use, validation, logging, etc.
     1. `init` - collect and organize data
-    1. `transform` - surface transforms
+    1. `transform` - data transforms
     1. `graph` - 3D rendering and plotting
     1. `viz` - visualization: plots, renders, etc.
 1. `_snapshots` weekly local backup of code & modified files shown
 
 ### Examples
 
-Uniaxial test recording (data)
+Uniaxial test recording (raw video data): 
 
-```
+<p>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="https://github.com/broemere/euda/raw/master/src/p20/examples/13D_ring_test.avi">
 src\p20\examples\13D_ring_test.avi
-```
+</a>
+</p>
 
 Autothresholding example
 

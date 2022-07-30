@@ -47,22 +47,6 @@ pip install -r requirements.txt
 
 # Usage
 
-### Organization
-
-1. Imports handled in `headers.py`
-1. Functions are in `func.py` and `elib.py`
-1. A project folder is used for each data set e.g. `p20`
-1. Project folder structure:
-    * `_data`
-        * `raw` - raw data
-        * `interm` - intermediate data storage for machine use
-        * `output` - for human use, validation, logging, etc.
-    1. `init` - collect and organize data
-    1. `transform` - data transforms
-    1. `graph` - 3D rendering and plotting
-    1. `viz` - visualization: plots, renders, etc.
-1. `_snapshots` weekly local backup of code & modified files shown
-
 ### Examples
 
 Uniaxial test recording (raw video data): 
@@ -79,6 +63,23 @@ Autothresholding example
 ```
 python src\p20\examples\auto-thresh-example.py
 ```
+
+### Organization
+
+1. Imports handled in `headers.py`
+1. Functions are in `func.py` and `elib.py`
+1. A project folder is used for each data set e.g. `p20`
+1. Project folder structure:
+    * `_data`
+        * `raw` - raw data
+        * `interm` - intermediate data storage for machine use
+        * `output` - for human use, validation, logging, etc.
+    1. `init` - collect and organize data
+    1. `transform` - data transforms
+    1. `graph` - 3D rendering and plotting
+    1. `viz` - visualization: plots, renders, etc.
+1. `_snapshots` weekly local backup of code & modified files shown
+
 
 # Features
 

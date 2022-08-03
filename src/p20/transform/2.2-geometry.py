@@ -10,7 +10,7 @@ timer = runstartup()
 samples = loadinterm("2-clean")
 
 for s in samples:
-    print(s._label)
+    print(s.th_best)
     block = np.ones((s.front_first.shape[1], s.side_first.shape[1], s.front_first.shape[0]))
     for layer in range(block.shape[1]):
         block[:, layer, :] = block[:, layer, :] * s.front_first.swapaxes(0,1)
@@ -49,7 +49,15 @@ for s in samples:
         height = len(widths)
         s.heights_one_gram.append(height)
 
-        
+    plt.figure()
+    plt.scatter(np.arange(len(s.heights)), s.last_pull["height"], marker=".", label="LabVIEW")
+    plt.scatter(np.arange(len(s.heights)), s.heights, marker=".", label="Goal Seeked")
+    plt.ylabel("Height [px]")
+
+    plt.show()
+    plt.close()
 
 
-writeinterm("2-voxels", samples)
+
+
+#writeinterm("2-voxels", samples)

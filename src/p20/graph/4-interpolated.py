@@ -20,9 +20,9 @@ for s in samples:
     if s._label in drop or s._type == "D":
         continue
     if s.sex == "M":
-        plt.scatter(s.stretch_lowess, s.stress, marker=".", color="blue", label="Male")
+        plt.scatter(s.stretch_interp, s.stress_range, marker=".", color="blue", label="Male")
     if s.sex == "F":
-        plt.scatter(s.stretch_lowess, s.stress, marker=".", color=colors[-1], label="Female")
+        plt.scatter(s.stretch_interp, s.stress_range, marker=".", color=colors[-1], label="Female")
 plt.legend(*[*zip(*{l: h for h, l in zip(*plt.gca().get_legend_handles_labels())}.items())][::-1])
 plt.xlabel("Stretch")
 plt.ylabel("Stress [kPa]")
@@ -37,9 +37,9 @@ for s in samples:
     if s._label in drop or s._type == "C":
         continue
     if s.sex == "M":
-        plt.scatter(s.stretch_lowess, s.stress, marker=".", color="blue", label="Male", alpha=0.25)
+        plt.scatter(s.stretch_interp, s.stress_range, marker=".", color="blue", label="Male", alpha=0.25)
     if s.sex == "F":
-        plt.scatter(s.stretch_lowess, s.stress, marker=".", color=colors[-1], label="Female", alpha=0.25)
+        plt.scatter(s.stretch_interp, s.stress_range, marker=".", color=colors[-1], label="Female", alpha=0.25)
 plt.legend(*[*zip(*{l: h for h, l in zip(*plt.gca().get_legend_handles_labels())}.items())][::-1])
 plt.xlabel("Stretch")
 plt.ylabel("Stress [kPa]")

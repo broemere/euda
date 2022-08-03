@@ -143,12 +143,12 @@ def loadinterm(filename):
     return data
 
 
-def toexcel(data, filename, sheets, src, keepindex=False):
+def toexcel(data, filename, sheets, keepindex=False):
     """(data, filename, sheets, final=False, keepindex=False)
     Export data to .xlsx file. Pass pandas dataframe,
     or dict of data for sheets=True."""
 
-    savepath = intermdir / src
+    savepath = intermdir
     mkdirpy(savepath)
     excelfile = filename + ".xlsx"
     potentialrename = True
